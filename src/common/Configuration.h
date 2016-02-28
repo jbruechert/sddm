@@ -42,7 +42,10 @@ namespace SDDM {
         Entry(Numlock,             NumState,    NUM_NONE,                                       _S("Initial NumLock state. Can be on, off or none.\n"
                                                                                                    "If property is set to none, numlock won't be changed\n"
                                                                                                    "NOTE: Currently ignored if autologin is enabled."));
-        Entry(InputMethod,         QString,     QStringLiteral("qtvirtualkeyboard"),                   _S("Input method module"));
+        Entry(InputMethod,         QString,     QStringLiteral("qtvirtualkeyboard"),            _S("Input method module"));
+        Entry(DisplayServer,       QString,     _S("x11"),                                      _S("Which display server should be used.\n"
+                                                                                                   "NOTE: Wayland support is currently considered experimental.\n"
+                                                                                                   "Valid values are: x11, wayland."));
         //  Name   Entries (but it's a regular class again)
         Section(Theme,
             Entry(ThemeDir,            QString,     _S(DATA_INSTALL_DIR "/themes"),             _S("Theme directory path"));
