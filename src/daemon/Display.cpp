@@ -379,8 +379,13 @@ namespace SDDM {
             if (m_lastSession.xdgSessionType() == QLatin1String("wayland"))
                 VirtualTerminal::jumpToVt(m_lastSession.vt());
 
-            if (m_socket)
+            if (m_socket) {
+                // switch to the new VT for Wayland sessions
+                if (m_lastSession.xdgSessionType() == QLatin1String("wayland"))
+                    VirtualTerminal::jumpToVt(m_lastSession.vt());
+
                 emit loginSucceeded(m_socket);
+            }
         } else if (m_socket) {
             qDebug() << "Authentication failure";
             emit loginFailed(m_socket);
