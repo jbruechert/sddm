@@ -12,6 +12,7 @@ message(STATUS "Building greeter for Qt ${QT_MAJOR_VERSION} as ${GREETER_TARGET}
 include_directories(
     "${CMAKE_SOURCE_DIR}/src/common"
     "${CMAKE_BINARY_DIR}/src/common"
+    "${CMAKE_SOURCE_DIR}/src/auth"
     "${LIBXCB_INCLUDE_DIR}"
 )
 
@@ -23,6 +24,9 @@ set(GREETER_SOURCES
     ${CMAKE_SOURCE_DIR}/src/common/SocketWriter.cpp
     ${CMAKE_SOURCE_DIR}/src/common/ThemeConfig.cpp
     ${CMAKE_SOURCE_DIR}/src/common/ThemeMetadata.cpp
+    ${CMAKE_SOURCE_DIR}/src/common/PamTypes.cpp
+    ${CMAKE_SOURCE_DIR}/src/auth/AuthPrompt.cpp
+    ${CMAKE_SOURCE_DIR}/src/auth/AuthRequest.cpp
     GreeterApp.cpp
     GreeterProxy.cpp
     KeyboardLayout.cpp

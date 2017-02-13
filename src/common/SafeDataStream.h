@@ -30,6 +30,7 @@ namespace SDDM {
         SafeDataStream(QIODevice* device);
         void send();
         void receive();
+        bool available();
         void reset();
 
     private:
